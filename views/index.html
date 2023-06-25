@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>API managing drivers, circuits and lap times</title>
+    <meta charset="UTF-8" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+
+      h1 {
+        color: #333;
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      p {
+        color: #666;
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      th,
+      td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+
+      th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Documentation de l'API</h1>
+    <p>
+      Bienvenue dans la documentation de l'API. Cette API fournit des endpoints
+      pour gérer les pilotes, les circuits, les chronos et les utilisateurs.
+    </p>
+    <p>
+      Retrouvez le code source du projet sur GitHub :
+      <a
+        class="github-link"
+        href="https://github.com/votre-utilisateur/votre-projet"
+        >https://github.com/votre-utilisateur/votre-projet</a
+      >
+    </p>
+
+    <h2>Endpoints disponibles</h2>
+
+    <table>
+      <tr>
+        <th>Endpoint</th>
+        <th>Description</th>
+        <th>Méthodes HTTP</th>
+      </tr>
+      <tr>
+        <td>/pilotes</td>
+        <td>Récupère la liste des pilotes</td>
+        <td>GET</td>
+      </tr>
+      <tr>
+        <td>/pilotes/{id_pilote}</td>
+        <td>Récupère un pilote spécifique</td>
+        <td>GET</td>
+      </tr>
+      <tr>
+        <td>/pilotes</td>
+        <td>Crée un nouveau pilote</td>
+        <td>POST</td>
+      </tr>
+      <tr>
+        <td>/pilotes/{id_pilote}</td>
+        <td>Supprime un pilote</td>
+        <td>DELETE</td>
+      </tr>
+      <tr>
+        <td>/pilotes/{id_pilote}</td>
+        <td>Met à jour un pilote</td>
+        <td>PUT</td>
+      </tr>
+      <tr>
+        <td>/circuits</td>
+        <td>Récupère la liste des circuits</td>
+        <td>GET</td>
+      </tr>
+      <tr>
+        <td>/circuits/{id_circuit}</td>
+        <td>Récupère un circuit spécifique</td>
+        <td>GET</td>
+      </tr>
+      <tr>
+        <td>/circuits</td>
+        <td>Crée un nouveau circuit</td>
+        <td>POST</td>
+      </tr>
+      <tr>
+        <td>/circuits/{id_circuit}</td>
+        <td>Supprime un circuit</td>
+        <td>DELETE</td>
+      </tr>
+      <tr>
+        <td>/circuits/{id_circuit}</td>
+        <td>Met à jour un circuit</td>
+        <td>PUT</td>
+      </tr>
+      <tr>
+        <td>/chronos</td>
+        <td>Récupère la liste des chronos</td>
+        <td>GET</td>
+      </tr>
+      <tr>
+        <td>/chronos/{id_chrono}</td>
+        <td>Récupère un chrono spécifique</td>
+        <td>GET</td>
+      </tr>
+      <tr>
+        <td>/chronos</td>
+        <td>Crée un nouveau chrono</td>
+        <td>POST</td>
+      </tr>
+      <tr>
+        <td>/chronos/{id_chrono}</td>
+        <td>Supprime un chrono</td>
+        <td>DELETE</td>
+      </tr>
+      <tr>
+        <td>/chronos/{id_chrono}</td>
+        <td>Met à jour un chrono</td>
+        <td>PUT</td>
+      </tr>
+      <tr>
+        <td>/official-circuits</td>
+        <td>Récupère la liste des circuits officiels (API externe)</td>
+        <td>GET</td>
+      </tr>
+      <tr>
+        <td>/register</td>
+        <td>Inscrit un nouvel utilisateur</td>
+        <td>POST</td>
+      </tr>
+      <tr>
+        <td>/login</td>
+        <td>Authentifie un utilisateur</td>
+        <td>POST</td>
+      </tr>
+    </table>
+  </body>
+</html>
