@@ -3,10 +3,10 @@ package route
 import (
 	"api_go_mathieu_fourtane/controller"
 	"encoding/json"
+	"github.com/gorilla/mux"
+	"github.com/rs/cors"
 	"io/ioutil"
 	"net/http"
-
-	"github.com/gorilla/mux"
 )
 
 func HomeHandler(w http.ResponseWriter, r *http.Request) {
@@ -40,6 +40,14 @@ func GetAllOfficialCircuitsHandler(w http.ResponseWriter, r *http.Request) {
 
 func Router() *mux.Router {
 	router := mux.NewRouter()
+
+	// Créer une instance de cors.Handler avec les options appropriées
+	corsMiddleware := cors.New(cors.Options{
+		AllowedOrigins: []string{"http://localhost:3000"},
+	})
+
+	// Ajouter le middleware CORS au routeur
+	router.Use(corsMiddleware.Handler)
 
 	// routes table pilotes
 	router.HandleFunc("/pilotes", controller.GetAllPilotes).Methods("GET")
