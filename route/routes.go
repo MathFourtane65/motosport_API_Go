@@ -3,10 +3,11 @@ package route
 import (
 	"api_go_mathieu_fourtane/controller"
 	"encoding/json"
-	"github.com/gorilla/mux"
-	"github.com/rs/cors"
 	"io/ioutil"
 	"net/http"
+
+	"github.com/gorilla/mux"
+	"github.com/rs/cors"
 )
 
 func HomeHandler(w http.ResponseWriter, r *http.Request) {
@@ -58,7 +59,8 @@ func Router() *mux.Router {
 	router.HandleFunc("/pilotes/{id_pilote}", controller.UpdateOnePilote).Methods("PUT")
 
 	// routes tables circuits
-	router.HandleFunc("/circuits", controller.GetAllCircuits).Methods("GET")
+	//router.HandleFunc("/circuits", controller.GetAllCircuits).Methods("GET")
+	router.Handle("/circuits", controller.AuthentificationMiddleware(http.HandlerFunc(controller.GetAllCircuits))).Methods("GET")
 	router.HandleFunc("/circuits/{id_circuit}", controller.GetOneCircuit).Methods("GET")
 	router.HandleFunc("/circuits", controller.CreateOneCircuit).Methods("POST")
 	router.HandleFunc("/circuits/{id_circuit}", controller.DeleteOneCircuit).Methods("DELETE")
